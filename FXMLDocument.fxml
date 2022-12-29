@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication3.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectmanagementsystem.FXMLDocumentController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="main_form" layoutX="312.0" layoutY="1.0" prefHeight="525.0" prefWidth="318.0">
+               <children>
+                  <Label layoutX="112.0" layoutY="59.0" prefHeight="49.0" prefWidth="164.0" styleClass="close" stylesheets="@logindesign.css" text="Welcome">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passward" layoutX="71.0" layoutY="277.0" prefHeight="25.0" prefWidth="217.0" promptText="Passward" styleClass="right-form" stylesheets="@logindesign.css" />
+                  <Button fx:id="loginbtn" layoutX="108.0" layoutY="374.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="136.0" styleClass="login-btn" stylesheets="@logindesign.css" text="Log in" />
+                  <TextField fx:id="username" layoutX="71.0" layoutY="164.0" prefHeight="32.0" prefWidth="217.0" promptText="User name" styleClass="right-form" stylesheets="@logindesign.css" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="5.0" prefHeight="525.0" prefWidth="318.0" styleClass="left-form" stylesheets="@logindesign.css">
+               <children>
+                  <Label layoutX="11.0" layoutY="205.0" prefHeight="119.0" prefWidth="292.0" text="Pharmacy Management System">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
