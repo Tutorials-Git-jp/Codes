@@ -1,7 +1,9 @@
+package Pharmacy;
+
 import java.io.IOException;
 
 interface HandleActions {
-    public abstract void doAction();
+    void doAction();
 
-    public abstract int trueFalse() throws IOException;
+    int trueFalse() throws IOException;
 }

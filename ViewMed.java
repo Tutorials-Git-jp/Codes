@@ -1,6 +1,9 @@
-import java.net.SocketTimeoutException;
+package Pharmacy;
 
 public class ViewMed {
+    public ViewMed() {
+    }
+
     public void printMed() {
         System.out.println("-----------------------------");
         System.out.println("   Name                 Price $");
@@ -15,7 +18,5 @@ public class ViewMed {
         System.out.println("9. ASPIRIN              450   $");
         System.out.println("10. ACETAMINOPHEN       500   $");
         System.out.println("-----------------------------");
-
     }
-
 }
