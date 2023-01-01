@@ -1,0 +1,104 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+
+
+public class ModifyMed implements HandleActions {
+
+    private String name;
+
+    public ModifyMed() {
+
+    }
+
+    public ModifyMed(String name) {
+        this.name = name;
+
+        Database.forModify.add(0, this.name);
+        Database.forModify.add(1, "NAPA");
+        Database.forModify.add(2, "ALTROL");
+        Database.forModify.add(3, "AMIDON");
+        Database.forModify.add(4, "SERGEL");
+        Database.forModify.add(5, "FEXO");
+        Database.forModify.add(6, "MAXPRO");
+        Database.forModify.add(7, "ACE");
+        Database.forModify.add(8, "XEMI");
+        Database.forModify.add(9, "ASPIRIN");
+        Database.forModify.add(10, "ACETAMINOPHEN");
+        Database.forModify2.add(0, 0);
+        Database.forModify2.add(1, 50);
+        Database.forModify2.add(2, 100);
+        Database.forModify2.add(3, 150);
+        Database.forModify2.add(4, 200);
+
+        Database.forModify2.add(5, 250);
+        Database.forModify2.add(6, 300);
+
+        Database.forModify2.add(7, 350);
+        Database.forModify2.add(8, 400);
+        Database.forModify2.add(9, 450);
+
+        Database.forModify2.add(10, 500);
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int trueFalse() throws IOException {
+
+        return 0;
+    }
+
+    @Override
+    public void doAction() {
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.println("--------------------------------------");
+            System.out.println("--------------YOUR CART---------------");
+            for (int i = 1; i < Database.medicine.size(); i++) {
+                System.out.println(i + " " + Database.medicine.get(i));
+            }
+            System.out.println("--------------------------------------");
+
+            System.out.println("Which Medicine your want to Modify?");
+            int sc1 = input.nextInt();
+            new ViewMed().printMed();
+            System.out.println("Enter the number of the medicine you want to take :");
+
+            int sc2 = input.nextInt();
+
+            System.out.println("--------------------------------------");
+            System.out.println(
+                    "Medicine = " + Database.medicine.get(sc1) + " Replaced with " + Database.forModify.get(sc2));
+            System.out.println("--------------------------------------");
+            Database.medicine.remove(sc1);
+            Database.bill.remove(sc1);
+            String replaceMedi = Database.forModify.get(sc2);
+            int replaceBill = Database.forModify2.get(sc2);
+            Database.medicine.add(sc1, replaceMedi);
+            Database.bill.add(sc1, replaceBill);
+
+            System.out.println("You want to modify more of your cart?");
+            System.out.println("1 . Yes");
+            System.out.println("2. NO");
+            System.out.println("Enter your Choice : ");
+            int choice2 = input.nextInt();
+
+            if (choice2 == 1) {
+                System.out.println();
+            } else if (choice2 == 2) {
+                break;
+            }
+        }
+
+    }
+
+}

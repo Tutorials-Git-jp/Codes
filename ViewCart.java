@@ -1,12 +1,11 @@
-package Pharmacy;
+
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class ViewCart implements HandleActions {
     private String name;
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -17,30 +16,27 @@ public class ViewCart implements HandleActions {
         this.name = name;
     }
 
+    @Override
     public int trueFalse() throws IOException {
+        // TODO Auto-generated method stub
         return 0;
     }
 
+    @Override
     public void doAction() {
         System.out.println("---------------------------------------------");
-        System.out.println("--------------WELCOME " + this.name + "-------------");
+        System.out.println("--------------WELCOME " + name + "-------------");
         System.out.println("--------------YOUR CART AND BILL---------------------");
-
-        int sum;
-        for(sum = 1; sum < Database.medicine.size(); ++sum) {
-            PrintStream var10000 = System.out;
-            String var10001 = (String)Database.medicine.get(sum);
-            var10000.println(var10001 + " " + String.valueOf(Database.bill.get(sum)));
+        for (int i = 1; i < Database.medicine.size(); i++) {
+            System.out.println(Database.medicine.get(i) + " " + Database.bill.get(i));
         }
-
         System.out.println("---------------------------------------------");
-        sum = 0;
+        int sum = 0;
+        for (int i = 1; i < Database.bill.size(); i++) {
+            sum = sum + Database.bill.get(i);
 
-        for(int i = 1; i < Database.bill.size(); ++i) {
-            sum += (Integer)Database.bill.get(i);
         }
-
         System.out.println("Total Bill = " + sum);
     }
-}
 
+}
